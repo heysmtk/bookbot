@@ -4,10 +4,15 @@ def count_words(book):
 
 
 def count_chars(content):
-    char_num = {}  # Prázdný slovník pro počítání znaků
-
-    for char in content:  # Procházíme každý znak přímo
-        char = char.lower()  # Převedeme na malá písmena
-        char_num[char] = char_num.get(char, 0) + 1  # Zvýšíme počet výskytů
-
+    char_num = {}  
+    for char in content:  
+        char = char.lower()  
+        char_num[char] = char_num.get(char, 0) + 1
     return char_num
+
+
+def sorted_chars(data):
+    items = list(data.items())
+    items.sort(key=lambda item: item[1], reverse=True)
+    sorted_data = dict(items)
+    return sorted_data
